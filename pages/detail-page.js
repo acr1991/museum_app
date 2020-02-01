@@ -1,10 +1,8 @@
-function submitComment() {
+function submitFeedback() {
   const inputField = document.getElementById("name");
   const name = inputField.value;
   const textArea = document.getElementById("msg");
   const msg = textArea.value;
-  console.log(name);
-  console.log(msg);
 }
 
 function submitComment() {
@@ -21,6 +19,10 @@ function submitComment() {
   comment.appendChild(h3);
   comment.appendChild(p);
   const commentSection = document.getElementById("comments");
+  if (!name || !msg) {
+    alert("You forgot to fill in your name or message!");
+  }
+
   commentSection.appendChild(comment);
   inputField.value = null;
   textArea.value = null;
